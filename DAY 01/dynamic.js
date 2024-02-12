@@ -7,6 +7,12 @@ function fetchPosts () {
     .then((data) => renderPosts(data.posts))
 }
 
+function fetchPostsBySearch(query){
+  fetch('https://dummyjson.com/posts/search?q='+query)
+  .then((res) => res.json())
+  .then((data) => {renderPostsOnSearch(data.posts);})
+}
+
 // USING ASYNC/AWAIT
 // async function fetchPosts() {
 //     const posts = await fetch(
@@ -25,6 +31,23 @@ function fetchPosts () {
 //         feeds.appendChild(p)
 //     })
 // }
+// elements Using Template
+function renderPostsOnSearch (posts) {
+  const feeds = document.querySelector('.feeds-search')
+  const feedTemplate = document.querySelector('#feed-template')
+
+  posts.forEach((post) => {
+    const feed = feedTemplate.content.cloneNode(true)
+    feed.querySelector(
+      '.feed-template a'
+    ).href = `userPosts?userId=${post.userId}`
+    feed.querySelector('.feed-template h6').innerText = post.userId
+    feed.querySelector('.feed-template b').innerText = post.title
+    feed.querySelector('.feed-template p').innerText = post.body
+
+    feeds.appendChild(feed)
+  })
+}
 
 // elements Using Template
 function renderPosts (posts) {

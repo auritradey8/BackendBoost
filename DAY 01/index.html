@@ -24,14 +24,37 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <form class="d-flex" role="search" onsubmit="event.preventDefault(); fetchPostsBySearch(document.getElementById('searchInput').value);">
+            <input class="form-control me-2" id="searchInput" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
         </div>
       </div>
     </nav>
   </header>
+  <main>
+    <div class="container">
+
+      <div class="feeds-search">
+        <h2>My Homepage</h2>
+        <template id="feed-template">
+
+          <div class="feed-template">
+            <div>
+              <a href="UserPostPath" style="text-decoration:none">
+                <h6>userId</h6>
+              </a>
+              <b>Title of the Post</b>
+            </div>
+            <p>userPostText</p>
+
+          </div>
+
+        </template>
+        <script src="dynamic.js"></script>
+      </div>
+    </div>
+  </main>
   <main>
     <div class="container">
 
@@ -55,6 +78,7 @@
       </div>
     </div>
   </main>
+
   <footer>
     <!-- place footer here -->
   </footer>
