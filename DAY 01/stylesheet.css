@@ -5,8 +5,23 @@
     text-decoration: none;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
         "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
 }
 
+ .navbar {
+    background-color: aqua;
+ }
+  
+  .navbar .btn-outline-success {
+    color: #1e1c1c; 
+    border-color: #1c1919; 
+  }
+  
+  .navbar .btn-outline-success:hover {
+    background-color: #1f1b1b; 
+    color: white; 
+  }
+  
 .container {
     width: 80%;
     margin: 0 auto;
@@ -25,7 +40,8 @@ a {
 .feed-template {
     padding: 1rem;
     width: 50vw;
-    background-color: rgb(248, 243, 243);
+    background-color: rgb(20, 19, 19);
+    color: aliceblue;
 }
 .feed-template div {
     display: flex;
